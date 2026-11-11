@@ -362,7 +362,7 @@ impl MovementEngine {
                     self.intent = LocomotionIntent::HangDrop;
                     // Hold inverted hind-hang so it reads as graceful.
                     self.special_timer = 1.15 + fastrand(0.0, 0.55);
-                    // hangDrop cells are top-aligned (hind paws at cell top).
+                    // hangDrop cells are top-aligned (front paws + head at cell top).
                     // Snap so the grip sits on the shelf — not the foot line.
                     let shelf_y = self
                         .last_support

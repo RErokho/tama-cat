@@ -52,7 +52,7 @@
     },
     "mass_h_bands": {
       "thin": {
-        "min": 75,
+        "min": 74,
         "max": 89
       },
       "sparse": {
@@ -857,28 +857,28 @@
     },
     "hangDrop-0": {
       "stem": "hangDrop-0",
-      "opaque": 2444,
-      "fill_pct": 9.547,
-      "bw": 35,
-      "bh": 122,
-      "primary": 122,
-      "aspect": 0.287,
-      "mass_h": 84,
+      "opaque": 2106,
+      "fill_pct": 8.227,
+      "bw": 36,
+      "bh": 124,
+      "primary": 124,
+      "aspect": 0.29,
+      "mass_h": 80,
       "mass_w": 19,
-      "bbox_fill_pct": 57.237,
+      "bbox_fill_pct": 47.177,
       "pose_class": "thin"
     },
     "hangDrop-1": {
       "stem": "hangDrop-1",
-      "opaque": 2463,
-      "fill_pct": 9.621,
-      "bw": 35,
-      "bh": 120,
-      "primary": 120,
-      "aspect": 0.292,
-      "mass_h": 83,
+      "opaque": 2102,
+      "fill_pct": 8.211,
+      "bw": 36,
+      "bh": 124,
+      "primary": 124,
+      "aspect": 0.29,
+      "mass_h": 80,
       "mass_w": 19,
-      "bbox_fill_pct": 58.643,
+      "bbox_fill_pct": 47.088,
       "pose_class": "thin"
     },
     "climbWindow-0": {
@@ -1234,15 +1234,15 @@
     },
     "hangDrop-2": {
       "stem": "hangDrop-2",
-      "opaque": 2443,
-      "fill_pct": 9.543,
-      "bw": 34,
-      "bh": 122,
-      "primary": 122,
-      "aspect": 0.279,
-      "mass_h": 83,
-      "mass_w": 19,
-      "bbox_fill_pct": 58.896,
+      "opaque": 2077,
+      "fill_pct": 8.113,
+      "bw": 36,
+      "bh": 124,
+      "primary": 124,
+      "aspect": 0.29,
+      "mass_h": 81,
+      "mass_w": 18,
+      "bbox_fill_pct": 46.528,
       "pose_class": "thin"
     },
     "pounce-2": {

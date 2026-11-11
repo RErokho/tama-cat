@@ -24,7 +24,7 @@ Perception (`cat-platform::PerceptionSensor`) → `UserActivitySnapshot` → `Co
 Эмоции / реакция: look, yawn, turn, alert, happy, annoyed, pounce  
 Окна: clingTop, wallLean, jumpUp, jumpDown, lookDown, hangDrop, climbWindow  
 Падение (`Fall`): клип чередуется на лету — `fall`, `fallTumble`, `fallCurl`, `fallFlail` (при большой |vy| чаще кувырок и паника). Приземление остаётся `land`.
-Peek-drop с окна: `lookDown` (3 кадра, голова вниз) → `hangDrop` (вис вверх ногами на задних, top-align) → fall.
+Peek-drop с окна: `lookDown` (голова вниз к краю) → `hangDrop` (вис на передних лапах сверху, голова у хвата смотрит вверх к полке, тело свисает вниз, top-align) → fall.
 Залаз по краю окна: `climbWindow` 3 фазы (хват → тяга → перевал), медленнее по Y.
 
 Новые позы без отдельного арта пока мапятся на эти клипы (reuse-first).
