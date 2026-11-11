@@ -1,0 +1,14 @@
+---
+description: Where AI Dev Team stores memory and how it proposes rule changes.
+alwaysApply: false
+---
+
+# Memory
+
+Constitution, clearance, and model policy change only by explicit user decision.
+
+Project memory lives only under that project's `.cursor/ai-dev-team/`. Do not write another project there. Do not fill core with one project's findings.
+
+A proposal to improve a skill, rule, or model route goes to `.cursor/ai-dev-team/proposals/` and is not applied by itself.
+
+Do not dump the whole chat context to disk.

@@ -1,0 +1,14 @@
+---
+description: Architecture limits for layers, contracts, and data in AI Dev Team.
+alwaysApply: false
+---
+
+# Architecture
+
+Layer boundary, public contract, data schema, and external integration get a recommendation from the matching architect first. Architects do not edit files.
+
+Do not replace a decision already in project docs. If there is no decision and structure depends on it, stop and ask.
+
+Repeat the project's existing pattern. Do not add a new shell, library, or database without a direct ask. Do not create an empty catch-all library. A module's public entry only lists what the project already treats as public — no implementation dump.
+
+A project rule may tighten work in its repo. It does not override core bans: models, secrets, foreign files, cloud Graphify.

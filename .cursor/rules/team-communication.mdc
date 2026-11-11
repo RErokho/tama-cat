@@ -1,0 +1,8 @@
+---
+description: Subagent output contract; Lead brevity.
+alwaysApply: false
+---
+
+# Communication
+
+Subagents reply **only** in `contract.report_format` (presets in `task-contract/references/report-formats.md`). No preamble, no prompt restatement. Lead → user: 2–5 sentences unless detail asked. Format fail → one short retry, then escalate. Facts vs guesses. Details: skill `handoff-management`.

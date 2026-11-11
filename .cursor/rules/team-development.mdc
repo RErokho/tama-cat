@@ -1,0 +1,20 @@
+---
+description: How AI Dev Team writes code in an already named area.
+alwaysApply: false
+---
+
+# Development
+
+Edit only the paths and behavior from the task. Do not touch a neighboring layer unless named.
+
+Do not invent the server contract. Do not hardcode port, host, or DB address — use project env. Do not invent a field, status, or access rule missing from the task and docs; ask one question.
+
+Access checks run on the server. A hidden button is not authorization.
+
+Do not swallow errors: return them or log without secret values and rethrow. In strict TypeScript, do not add `any`, empty `catch`, or `as` to silence errors.
+
+Comments only for limits that are not obvious from code. No empty packages or stubs. Share code only when two call sites need it. One file, one responsibility, if the project already works that way.
+
+Match this project's names, indent, and folders — not a core archive. Use the project's formatter.
+
+Do not apply live DB migrations. Do not write secrets. Do not write or run tests. After edits you may run an existing build or typecheck if present. Do not invent missing scripts.

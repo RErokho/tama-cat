@@ -1,0 +1,42 @@
+---
+description: Desktop Cat — стек, слои, verify и запреты выдумки.
+alwaysApply: true
+---
+
+# Desktop Cat
+
+Живой кот на Windows (Shimeji-like). **Rust** Cargo workspace в корне репозитория. **Не** тамагочи.
+
+## Стек
+
+- Runtime: native Win32 via crate `windows`
+- Workspace: корневой `Cargo.toml`, members в `crates/`
+- Спрайты: `assets/sprites/cat/sheet.png` + `sheet.json`
+- Поведение: `docs/BEHAVIOR.md`
+- Electron/TS удалён — не восстанавливать без явной просьбы
+
+## Слои (не смешивать)
+
+| Слой | Путь |
+| --- | --- |
+| Domain | `crates/cat-core/` |
+| Render | `crates/cat-render/` |
+| Platform | `crates/cat-platform/` |
+| App | `crates/desktop-cat/` |
+| Sprite tools | `scripts/` (Python) |
+
+Новый клип: `AnimClip` в `cat-core` + кадры в `sheet.json` / clean cells.
+
+## Verify
+
+- typecheck: none (cargo check при необходимости)
+- lint: none
+- test: none
+- build: `cargo build -p desktop-cat`
+- run: `cargo run -p desktop-cat`
+- release: `cargo build -p desktop-cat --release`
+
+## Ростер
+
+Уместны: `desktop-developer`, `debugging-specialist`, `qa-engineer`.  
+Не звать по умолчанию: backend/database/mobile/web frontend.

@@ -1,0 +1,101 @@
+{
+  "id": "TASK-3",
+  "status": "planned",
+  "priority": "high",
+  "title": "Fall animation variants with mid-air switches",
+  "request": "Improve and expand fall animations: several variants that can change in flight, including tumbles and other poses.",
+  "interpretation": "Multiple fall AnimClips + FallStyle in MovementEngine; random/weighted mid-air style switches; new sprites for tumble/curl/flail; reuse land.",
+  "acceptance": [
+    "At least 3 fall variants besides classic fall",
+    "Style can change while airborne (not only on throw)",
+    "New stems processed into sheet + AnimClip wired",
+    "cargo build -p desktop-cat succeeds",
+    "check_sprites on new stems has no BAD for missing/cell"
+  ],
+  "assignees": [
+    "desktop-developer",
+    "qa-engineer"
+  ],
+  "history": [
+    {
+      "at": "2026-11-11T14:32:00Z",
+      "event": "created",
+      "note": "User asked expand fall anims mid-flight"
+    },
+    {
+      "at": "2026-11-11T11:35:00Z",
+      "from": "cancelled",
+      "to": "cancelled",
+      "by": "team-lead",
+      "note": "Temp cancel so GenerateImage can write outside workspace for sprite regen; recreate after"
+    },
+    {
+      "at": "2026-11-11T14:33:00Z",
+      "event": "status",
+      "note": "planned while GenerateImage runs (scoped task blocks outside writes)"
+    },
+    {
+      "at": "2026-11-11T14:45:00Z",
+      "event": "status",
+      "note": "fall variants wired; cargo build ok; 2 mild color BAD left on new stems"
+    },
+    {
+      "at": "2026-11-11T14:45:00Z",
+      "note": "planned for GenerateImage during edge-pose regen"
+    }
+  ],
+  "budget": {
+    "effortCap": "high",
+    "maxAttempts": 2
+  },
+  "execution": {
+    "mode": "shared",
+    "isolation": "disabled"
+  },
+  "contract": {
+    "goal": "Airborne cat cycles fall pose variants (spread/tumble/curl/flail) mid-flight.",
+    "context": "Today Fall uses only fall-0/fall-1. resolve_anim maps Fall→AnimClip::Fall. behavior uses movement.resolve_anim while airborne.",
+    "inputs": [
+      "crates/cat-core/src/movement.rs",
+      "crates/cat-core/src/types.rs",
+      "scripts/slice_gemini_sheet.py",
+      "assets/sprites/cat/sheet.json"
+    ],
+    "constraints": [
+      "No Electron",
+      "No WinAPI in cat-core",
+      "Color fix = regenerate only (no RGB nudge)",
+      "Fill% cell-invariant via --use-profile / normalize_to_fill"
+    ],
+    "allowed_files": [
+      "crates/cat-core/src/types.rs",
+      "crates/cat-core/src/movement.rs",
+      "crates/cat-core/src/behavior.rs",
+      "crates/cat-core/src/lib.rs",
+      "scripts/slice_gemini_sheet.py",
+      "docs/BEHAVIOR.md",
+      "assets/sprites/cat/**",
+      ".cursor/rules/project-sprites.mdc",
+      ".cursor/ai-dev-team/tasks/TASK-3.json"
+    ],
+    "forbidden_files": [
+      ".cursor/plans/**"
+    ],
+    "acceptance": [
+      "FallStyle switches while intent==Fall",
+      "AnimClip Fall|FallTumble|FallCurl|FallFlail exist and map to sheet keys",
+      "cargo build -p desktop-cat ok"
+    ],
+    "report_format": "writer-brief",
+    "risks": [
+      "GenerateImage color drift vs idle",
+      "Open TASK scope may block GenerateImage outside workspace"
+    ],
+    "unfinished": [],
+    "evidence": [
+      "cargo build -p desktop-cat ok",
+      "sheet has fallTumble/fallCurl/fallFlail"
+    ],
+    "max_reply": "short"
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "role": "core",
+  "product": "ai-dev-team",
+  "version": "0.8.0",
+  "note": "This is the core repository. Do not store project profiles here."
+}

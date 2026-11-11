@@ -1,0 +1,14 @@
+---
+description: Keep core and target project separate. Do not dump the whole repo into context.
+alwaysApply: false
+---
+
+# Context
+
+Core has `.cursor/ai-dev-team/core.json` with `"role": "core"`. Do not copy project notes into core or outside `.cursor/`.
+
+Pass agents only goal, paths, constraints, facts — not the whole repo.
+
+If the open workspace is core, do not explore other projects until the user names a path. No path — one question.
+
+Graphify: local only, needed area only. Output `graphify-out/` at that project root. Details: skill `graphify` and rule `team-graphify`.

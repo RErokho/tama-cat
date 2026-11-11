@@ -1,0 +1,143 @@
+{
+  "id": "TASK-1",
+  "status": "completed",
+  "priority": "high",
+  "title": "Companion reactions: Perception → scenes (all waves)",
+  "request": "Implement companion reaction pipeline and ~60 scenes across waves 0–5 with sprites reuse first.",
+  "interpretation": "One Perception→Context→Scene engine; canon 50 user scenes + Lead extras; Rust/Win32 only; reuse sheet clips; new art only when reuse insufficient.",
+  "acceptance": [
+    "Single Perception→Context→Scene pipeline",
+    "Scene catalog covers ~60 SceneIds with trigger/clip/duration/priority/cooldown",
+    "Wave1 companion feel for typing/cursor/idle/lock",
+    "cargo build -p desktop-cat succeeds",
+    "No tamagotchi systems"
+  ],
+  "assignees": [
+    "desktop-developer",
+    "qa-engineer"
+  ],
+  "history": [
+    {
+      "at": "2026-11-11T14:11:00Z",
+      "event": "created",
+      "note": "Plan companion_reactions_plan approved; start Wave 0"
+    },
+    {
+      "at": "2026-11-11T11:25:00Z",
+      "from": "cancelled",
+      "to": "verified",
+      "by": "team-lead",
+      "note": "Waves 0–5 complete with reuse-first sprites; gates passed; QA accept; no new GenerateImage required"
+    }
+  ],
+  "budget": {
+    "effortCap": "high",
+    "maxAttempts": 2
+  },
+  "execution": {
+    "mode": "shared",
+    "isolation": "disabled"
+  },
+  "contract": {
+    "goal": "Ship companion reaction engine and all planned scenes wired to Win32 sensors and AnimClips.",
+    "context": "Desktop Cat Rust workspace. BehaviorEngine is autonomous only. sheet.json has unused look/yawn/turn/alert/happy/annoyed/pounce. Plan waves 0–5.",
+    "inputs": [
+      "docs/BEHAVIOR.md",
+      "plan companion_reactions_plan"
+    ],
+    "constraints": [
+      "No Electron",
+      "No WinAPI types in cat-core",
+      "Secrets/clipboard text never logged",
+      "Do not edit the plan file",
+      "Reuse existing sprites when possible"
+    ],
+    "allowed_files": [
+      "crates/cat-core/src/**",
+      "crates/cat-platform/src/**",
+      "crates/cat-render/src/**",
+      "crates/desktop-cat/src/**",
+      "Cargo.toml",
+      "docs/BEHAVIOR.md",
+      "assets/sprites/cat/**",
+      "scripts/**",
+      ".cursor/ai-dev-team/tasks/TASK-1.json",
+      ".cursor/ai-dev-team/verification-report.json"
+    ],
+    "forbidden_files": [
+      ".cursor/plans/**"
+    ],
+    "acceptance": [
+      "Perception snapshot sampled on Tick",
+      "All SceneIds selectable via director with cooldowns",
+      "Unused sheet clips wired in AnimClip",
+      "cargo build -p desktop-cat ok"
+    ],
+    "report_format": "writer-brief",
+    "risks": [
+      "Scroll/UIA/volume heuristics may be coarse",
+      "New unique pose sprites deferred to reuse mapping"
+    ],
+    "unfinished": [],
+    "evidence": [
+      ".cursor/ai-dev-team/quality/verification-report.json passed",
+      "cargo build -p desktop-cat ok",
+      "qa-engineer Verdict accept",
+      "62 SceneIds in crates/cat-core/src/scenes.rs"
+    ],
+    "max_reply": "short"
+  },
+  "packets": [
+    {
+      "id": "PKT-1",
+      "kind": "contract",
+      "title": "Activity + Scene contracts",
+      "assignee": "desktop-developer",
+      "depends_on": [],
+      "allowed_files": [
+        "crates/cat-core/src/types.rs",
+        "crates/cat-core/src/activity.rs",
+        "crates/cat-core/src/scenes.rs",
+        "crates/cat-core/src/context.rs",
+        "crates/cat-core/src/lib.rs"
+      ],
+      "forbidden_files": [
+        ".cursor/plans/**"
+      ],
+      "acceptance": [
+        "UserActivitySnapshot and Scene catalog compile"
+      ],
+      "verify": [
+        "cargo check -p cat-core"
+      ]
+    },
+    {
+      "id": "PKT-2",
+      "kind": "implement",
+      "title": "Behavior + pet + perception + app bridge",
+      "assignee": "desktop-developer",
+      "depends_on": [
+        "PKT-1"
+      ],
+      "allowed_files": [
+        "crates/cat-core/src/behavior.rs",
+        "crates/cat-core/src/pet.rs",
+        "crates/cat-platform/src/perception.rs",
+        "crates/cat-platform/src/lib.rs",
+        "crates/desktop-cat/src/main.rs",
+        "Cargo.toml",
+        "docs/BEHAVIOR.md"
+      ],
+      "forbidden_files": [
+        ".cursor/plans/**"
+      ],
+      "acceptance": [
+        "Tick feeds snapshot; scenes fire"
+      ],
+      "verify": [
+        "cargo build -p desktop-cat"
+      ]
+    }
+  ],
+  "contract_version": 1
+}

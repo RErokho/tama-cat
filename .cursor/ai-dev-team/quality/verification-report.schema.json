@@ -1,0 +1,53 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://ai-dev-team.local/verification-report.schema.json",
+  "title": "AI Dev Team Verification Report",
+  "type": "object",
+  "required": ["version", "task_id", "status", "checks", "created_at"],
+  "additionalProperties": false,
+  "properties": {
+    "version": { "type": "integer", "minimum": 1 },
+    "task_id": { "type": "string" },
+    "status": {
+      "type": "string",
+      "enum": ["passed", "failed", "skipped", "incomplete"]
+    },
+    "created_at": { "type": "string" },
+    "skip_reason": { "type": ["string", "null"] },
+    "checks": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["gate", "status"],
+        "additionalProperties": false,
+        "properties": {
+          "gate": { "type": "string" },
+          "status": {
+            "type": "string",
+            "enum": ["passed", "failed", "skipped", "error"]
+          },
+          "exit_code": { "type": ["integer", "null"] },
+          "duration_ms": { "type": ["integer", "null"] },
+          "command": { "type": ["string", "null"] },
+          "evidence": { "type": ["string", "null"] },
+          "required": { "type": "boolean" }
+        }
+      }
+    },
+    "review": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "agent": { "type": "string" },
+        "status": {
+          "type": "string",
+          "enum": ["approved", "rejected", "pending", "skipped"]
+        },
+        "findings": {
+          "type": "array",
+          "items": { "type": "string" }
+        }
+      }
+    }
+  }
+}

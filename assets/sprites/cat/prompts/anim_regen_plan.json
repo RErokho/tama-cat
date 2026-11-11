@@ -1,0 +1,437 @@
+{
+  "rules": [
+    "No stem shared across different animations",
+    "Within one anim, each index is a unique stem (no ping-pong reuse)",
+    "Generate → process --use-profile → qa_anim_frames → accept or regen",
+    "Reject: white/light halo, props, wrong facing, pose mismatch, big consecutive jump",
+    "Color: recreate only (no RGB nudge)",
+    "Canon scale/color from idle-0 after accept"
+  ],
+  "order": [
+    "idle",
+    "blink",
+    "sit",
+    "sleep",
+    "look",
+    "yawn",
+    "turn",
+    "alert",
+    "happy",
+    "annoyed",
+    "stretch",
+    "groom",
+    "walk",
+    "run",
+    "jump",
+    "jumpUp",
+    "jumpDown",
+    "land",
+    "fall",
+    "fallTumble",
+    "fallCurl",
+    "fallFlail",
+    "pounce",
+    "drag",
+    "climb",
+    "climbWindow",
+    "lookDown",
+    "hangDrop",
+    "clingTop",
+    "wallLean",
+    "rub",
+    "pawKeyboard",
+    "bellyUp",
+    "slowBlink",
+    "knead",
+    "attentionPaw",
+    "faceHide",
+    "tailChase"
+  ],
+  "animations": {
+    "idle": {
+      "fps": 3,
+      "frames": [
+        "idle-0",
+        "idle-1",
+        "idle-2",
+        "idle-3"
+      ],
+      "desc": "Standing calm, subtle breathing/weight shift, all paws down, head level, nose RIGHT"
+    },
+    "blink": {
+      "fps": 8,
+      "frames": [
+        "blink-0",
+        "blink-1",
+        "blink-2"
+      ],
+      "desc": "Standing like idle: eyes closing → closed → opening; dedicated blink stems only"
+    },
+    "sit": {
+      "fps": 2,
+      "frames": [
+        "sit-0",
+        "sit-1",
+        "sit-2"
+      ],
+      "desc": "Sitting upright, slight head/ear motion"
+    },
+    "sleep": {
+      "fps": 1,
+      "frames": [
+        "sleep-0",
+        "sleep-1",
+        "sleep-2"
+      ],
+      "desc": "Lying/curled asleep, eyes closed, slow breathing — NOT sit reuse"
+    },
+    "look": {
+      "fps": 2,
+      "frames": [
+        "look-0",
+        "look-1"
+      ],
+      "desc": "Sitting/standing looking up-right, curious"
+    },
+    "yawn": {
+      "fps": 4,
+      "frames": [
+        "yawn-0",
+        "yawn-1",
+        "yawn-2"
+      ],
+      "desc": "Mouth opens wide yawn then closes"
+    },
+    "turn": {
+      "fps": 4,
+      "frames": [
+        "turn-0",
+        "turn-1"
+      ],
+      "desc": "Body faces RIGHT, head glances back then returns"
+    },
+    "alert": {
+      "fps": 3,
+      "frames": [
+        "alert-0",
+        "alert-1"
+      ],
+      "desc": "Alert ears forward, tense standing"
+    },
+    "happy": {
+      "fps": 3,
+      "frames": [
+        "happy-0",
+        "happy-1"
+      ],
+      "desc": "Happy face / soft smile, upright"
+    },
+    "annoyed": {
+      "fps": 3,
+      "frames": [
+        "annoyed-0",
+        "annoyed-1"
+      ],
+      "desc": "Ears back, narrowed eyes"
+    },
+    "stretch": {
+      "fps": 4,
+      "frames": [
+        "stretch-0",
+        "stretch-1",
+        "stretch-2",
+        "stretch-3"
+      ],
+      "desc": "Front low → back arch → full stretch → ease"
+    },
+    "groom": {
+      "fps": 4,
+      "frames": [
+        "groom-0",
+        "groom-1",
+        "groom-2",
+        "groom-3"
+      ],
+      "desc": "Sitting grooming shoulder/paw cycle"
+    },
+    "walk": {
+      "fps": 12,
+      "frames": [
+        "walk-0",
+        "walk-1",
+        "walk-2",
+        "walk-3",
+        "walk-4",
+        "walk-5",
+        "walk-6",
+        "walk-7"
+      ],
+      "desc": "Walk cycle diagonal gait, 8 unique frames, four distinct paws each"
+    },
+    "run": {
+      "fps": 14,
+      "frames": [
+        "run-0",
+        "run-1",
+        "run-2",
+        "run-3",
+        "run-4",
+        "run-5"
+      ],
+      "desc": "Gallop/run cycle 6 unique frames"
+    },
+    "jump": {
+      "fps": 10,
+      "frames": [
+        "jump-0",
+        "jump-1",
+        "jump-2",
+        "jump-3"
+      ],
+      "desc": "Crouch → launch → mid-air → prepare land"
+    },
+    "jumpUp": {
+      "fps": 8,
+      "frames": [
+        "jumpUp-0",
+        "jumpUp-1"
+      ],
+      "desc": "Upward leap, paws reaching up"
+    },
+    "jumpDown": {
+      "fps": 8,
+      "frames": [
+        "jumpDown-0",
+        "jumpDown-1"
+      ],
+      "desc": "Downward hop/drop ready"
+    },
+    "land": {
+      "fps": 6,
+      "frames": [
+        "land-0",
+        "land-1"
+      ],
+      "desc": "Landing impact then settle"
+    },
+    "fall": {
+      "fps": 8,
+      "frames": [
+        "fall-0",
+        "fall-1",
+        "fall-2",
+        "fall-3"
+      ],
+      "desc": "Classic spread-limb fall cycle"
+    },
+    "fallTumble": {
+      "fps": 12,
+      "frames": [
+        "fallTumble-0",
+        "fallTumble-1",
+        "fallTumble-2",
+        "fallTumble-3"
+      ],
+      "desc": "Somersault tumble in air"
+    },
+    "fallCurl": {
+      "fps": 6,
+      "frames": [
+        "fallCurl-0",
+        "fallCurl-1",
+        "fallCurl-2"
+      ],
+      "desc": "Curled ball fall"
+    },
+    "fallFlail": {
+      "fps": 10,
+      "frames": [
+        "fallFlail-0",
+        "fallFlail-1",
+        "fallFlail-2",
+        "fallFlail-3"
+      ],
+      "desc": "Panic flail fall"
+    },
+    "pounce": {
+      "fps": 10,
+      "frames": [
+        "pounce-0",
+        "pounce-1",
+        "pounce-2"
+      ],
+      "desc": "Crouch → leap stretch → reach"
+    },
+    "drag": {
+      "fps": 6,
+      "frames": [
+        "drag-0",
+        "drag-1",
+        "drag-2"
+      ],
+      "desc": "Limp/drag poses, no hands/props"
+    },
+    "climb": {
+      "fps": 8,
+      "frames": [
+        "climb-0",
+        "climb-1",
+        "climb-2",
+        "climb-3"
+      ],
+      "desc": "Vertical climb alternate paws"
+    },
+    "climbWindow": {
+      "fps": 6,
+      "frames": [
+        "climbWindow-0",
+        "climbWindow-1",
+        "climbWindow-2",
+        "climbWindow-3"
+      ],
+      "desc": "Edge climb: grab → pull → crest → onto top; no props"
+    },
+    "lookDown": {
+      "fps": 3,
+      "frames": [
+        "lookDown-0",
+        "lookDown-1",
+        "lookDown-2"
+      ],
+      "desc": "Gradual head-down peek over edge; no props"
+    },
+    "hangDrop": {
+      "fps": 3,
+      "frames": [
+        "hangDrop-0",
+        "hangDrop-1",
+        "hangDrop-2"
+      ],
+      "desc": "Upside-down hang by hind paws at TOP; top-align"
+    },
+    "clingTop": {
+      "fps": 4,
+      "frames": [
+        "clingTop-0",
+        "clingTop-1",
+        "clingTop-2"
+      ],
+      "desc": "Clinging under top edge, paws up; top-align"
+    },
+    "wallLean": {
+      "fps": 3,
+      "frames": [
+        "wallLean-0",
+        "wallLean-1",
+        "wallLean-2"
+      ],
+      "desc": "Lean on right wall; right-align"
+    },
+    "rub": {
+      "fps": 4,
+      "frames": [
+        "rub-0",
+        "rub-1"
+      ],
+      "desc": "Rubbing against something / affection rub"
+    },
+    "pawKeyboard": {
+      "fps": 4,
+      "frames": [
+        "pawKeyboard-0",
+        "pawKeyboard-1"
+      ],
+      "desc": "Paw tapping as if on keyboard; no keyboard prop"
+    },
+    "bellyUp": {
+      "fps": 2,
+      "frames": [
+        "bellyUp-0",
+        "bellyUp-1"
+      ],
+      "desc": "Lying belly-up playful"
+    },
+    "slowBlink": {
+      "fps": 3,
+      "frames": [
+        "slowBlink-0",
+        "slowBlink-1"
+      ],
+      "desc": "Slow trust blink, dedicated frames"
+    },
+    "knead": {
+      "fps": 4,
+      "frames": [
+        "knead-0",
+        "knead-1",
+        "knead-2"
+      ],
+      "desc": "Kneading paws"
+    },
+    "attentionPaw": {
+      "fps": 3,
+      "frames": [
+        "attentionPaw-0",
+        "attentionPaw-1"
+      ],
+      "desc": "Raised paw asking attention"
+    },
+    "faceHide": {
+      "fps": 2,
+      "frames": [
+        "faceHide-0",
+        "faceHide-1"
+      ],
+      "desc": "Hides face with paw / shy"
+    },
+    "tailChase": {
+      "fps": 6,
+      "frames": [
+        "tailChase-0",
+        "tailChase-1",
+        "tailChase-2"
+      ],
+      "desc": "Chasing own tail spin"
+    }
+  },
+  "status": {
+    "idle": "accepted",
+    "blink": "accepted",
+    "sit": "accepted",
+    "sleep": "accepted",
+    "look": "accepted",
+    "yawn": "accepted",
+    "turn": "accepted",
+    "alert": "accepted",
+    "happy": "accepted",
+    "annoyed": "accepted",
+    "stretch": "accepted",
+    "groom": "accepted",
+    "walk": "accepted",
+    "run": "accepted",
+    "jump": "accepted",
+    "jumpUp": "accepted",
+    "jumpDown": "accepted",
+    "land": "accepted",
+    "fall": "accepted",
+    "fallTumble": "accepted",
+    "fallCurl": "accepted",
+    "fallFlail": "accepted",
+    "pounce": "accepted",
+    "drag": "accepted",
+    "climb": "accepted",
+    "climbWindow": "accepted",
+    "lookDown": "accepted",
+    "hangDrop": "accepted",
+    "clingTop": "accepted",
+    "wallLean": "accepted",
+    "rub": "accepted",
+    "pawKeyboard": "accepted",
+    "bellyUp": "accepted",
+    "slowBlink": "accepted",
+    "knead": "accepted",
+    "attentionPaw": "accepted",
+    "faceHide": "accepted",
+    "tailChase": "accepted"
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "baseModel": "grok-4.7",
+  "allowedEfforts": ["low", "medium", "high"],
+  "context": "256k",
+  "fast": false,
+  "forbidden": ["fast", "xhigh", "extra-high", "max", "grok-4.6", "context=500k", "inherit"],
+  "pins": {
+    "low": "grok-4.7[reasoning_effort=low,fast=false,context=256k]",
+    "medium": "grok-4.7[reasoning_effort=medium,fast=false,context=256k]",
+    "high": "grok-4.7[reasoning_effort=high,fast=false,context=256k]"
+  },
+  "taskToolModelParam": "do-not-pass",
+  "cap": "high",
+  "oneEffortPerCall": true,
+  "retryWithoutNewEvidence": false
+}

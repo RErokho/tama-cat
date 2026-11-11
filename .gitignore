@@ -1,0 +1,16 @@
+/target/
+graphify-out/
+.cursor/ai-dev-team/graphify/last-build.json
+.cursor/ai-dev-team/memory/CHECKPOINT.md
+.cursor/ai-dev-team/quality/logs/
+.cursor/ai-dev-team/quality/verification-report.json
+.cursor/ai-dev-team/quality/regression-report.json
+.cursor/ai-dev-team/quality/gates.project.smoke.json
+.cursor/ai-dev-team/worktrees/
+.cursor/ai-dev-team/observability/events.jsonl
+.cursor/ai-dev-team/observability/observability-report.json
+.cursor/ai-dev-team/fixtures/**/.cursor/
+scripts/__pycache__/
+*.log
+.DS_Store
+Thumbs.db

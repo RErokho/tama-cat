@@ -1,0 +1,58 @@
+{
+  "version": 1,
+  "hooks": {
+    "sessionStart": [
+      {
+        "command": "node .cursor/hooks/session-start-brief.js",
+        "timeout": 10
+      }
+    ],
+    "beforeShellExecution": [
+      {
+        "command": "node .cursor/hooks/guard-dangerous-shell.js",
+        "timeout": 10
+      }
+    ],
+    "beforeReadFile": [
+      {
+        "command": "node .cursor/hooks/guard-secrets-read.js",
+        "timeout": 10,
+        "failClosed": true
+      }
+    ],
+    "subagentStart": [
+      {
+        "command": "node .cursor/hooks/guard-subagent-start.js",
+        "timeout": 10,
+        "failClosed": true
+      }
+    ],
+    "preToolUse": [
+      {
+        "matcher": "Write|Delete",
+        "command": "node .cursor/hooks/guard-allowed-files.js",
+        "timeout": 10,
+        "failClosed": true
+      }
+    ],
+    "afterFileEdit": [
+      {
+        "command": "node .cursor/hooks/after-file-edit-format.js",
+        "timeout": 20
+      }
+    ],
+    "preCompact": [
+      {
+        "command": "node .cursor/hooks/pre-compact-checkpoint.js",
+        "timeout": 15
+      }
+    ],
+    "stop": [
+      {
+        "command": "node .cursor/hooks/stop-gate-loop.js",
+        "timeout": 10,
+        "loop_limit": 2
+      }
+    ]
+  }
+}

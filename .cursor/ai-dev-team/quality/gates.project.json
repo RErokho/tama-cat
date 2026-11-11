@@ -1,0 +1,51 @@
+{
+  "version": 1,
+  "project": "desktop-cat",
+  "source": "adapted",
+  "discoveredFrom": [
+    "Cargo.toml"
+  ],
+  "gates": [
+    {
+      "id": "build",
+      "command": "cargo build -p desktop-cat",
+      "required": true,
+      "when": "always",
+      "kind": "command",
+      "timeout": 300000,
+      "cwd": ".",
+      "package": "root",
+      "note": "from Cargo workspace desktop-cat"
+    },
+    {
+      "id": "typecheck",
+      "command": null,
+      "required": false,
+      "when": "frontend",
+      "kind": "none",
+      "cwd": ".",
+      "package": "root",
+      "note": "covered by cargo build"
+    },
+    {
+      "id": "lint",
+      "command": null,
+      "required": false,
+      "when": "always",
+      "kind": "none",
+      "cwd": ".",
+      "package": "root",
+      "note": "no lint script"
+    },
+    {
+      "id": "test",
+      "command": null,
+      "required": false,
+      "when": "always",
+      "kind": "none",
+      "cwd": ".",
+      "package": "root",
+      "note": "no test suite yet"
+    }
+  ]
+}

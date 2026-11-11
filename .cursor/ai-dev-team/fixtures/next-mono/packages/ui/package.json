@@ -1,0 +1,10 @@
+{
+  "name": "@fixture/ui",
+  "private": true,
+  "version": "0.0.0",
+  "scripts": {
+    "typecheck": "node -e \"console.log('ui typecheck ok'); process.exit(0)\"",
+    "lint": "node -e \"console.log('ui lint ok'); process.exit(0)\"",
+    "test": "node -e \"console.log('ui test ok'); process.exit(0)\""
+  }
+}

@@ -1,0 +1,14 @@
+pub const APP_NAME: &str = "Desktop Cat";
+pub const TICK_HZ: f32 = 60.0;
+pub const SURFACE_POLL_HZ: f32 = 8.0;
+pub const PET_FRAME_WIDTH: f32 = 200.0;
+pub const PET_FRAME_HEIGHT: f32 = 128.0;
+pub const GRAVITY: f32 = 980.0;
+pub const WALK_SPEED: f32 = 60.0;
+pub const RUN_SPEED: f32 = 140.0;
+pub const MAX_JUMP_UP_PX: f32 = 140.0;
+pub const MAX_JUMP_DOWN_PX: f32 = 320.0;
+pub const MAX_CLIMB_UP_PX: f32 = 160.0;
+pub const MAX_THROW_UP_SPEED: f32 = 420.0;
+pub const SIDE_PAD: f32 = 48.0;
+pub const EDGE_INSET: f32 = 2.0;

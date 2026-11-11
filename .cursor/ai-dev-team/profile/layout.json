@@ -1,0 +1,10 @@
+{
+  "note": "Adaptation creates only these under the target project's .cursor/. No essay profile dumps.",
+  "files": [
+    ".cursor/ai-dev-team/memory/DECISIONS.md",
+    ".cursor/ai-dev-team/memory/KNOWN_ISSUES.md",
+    ".cursor/ai-dev-team/memory/CONVENTIONS.md",
+    ".cursor/ai-dev-team/memory/README.md",
+    ".cursor/ai-dev-team/quality/gates.project.json"
+  ]
+}

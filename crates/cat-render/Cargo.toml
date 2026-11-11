@@ -1,0 +1,13 @@
+[package]
+name = "cat-render"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+description = "Sprite sheet loading and frame composition"
+
+[dependencies]
+cat-core = { workspace = true }
+image = { workspace = true }
+serde = { workspace = true }
+serde_json = { workspace = true }
+thiserror = { workspace = true }

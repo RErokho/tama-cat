@@ -1,0 +1,436 @@
+{
+  "image": "sheet.png",
+  "frameWidth": 200,
+  "frameHeight": 128,
+  "scaleNote": "Gemini 8x5 equal cells; uniform letterbox scale; no bbox crop; chroma+despill",
+  "source": "gemini-sheet-0-39",
+  "animations": {
+    "idle": {
+      "frames": [
+        0,
+        1,
+        2,
+        65
+      ],
+      "fps": 3
+    },
+    "blink": {
+      "frames": [
+        3,
+        66,
+        67
+      ],
+      "fps": 8
+    },
+    "sit": {
+      "frames": [
+        4,
+        5,
+        68
+      ],
+      "fps": 2
+    },
+    "look": {
+      "frames": [
+        6,
+        72
+      ],
+      "fps": 2
+    },
+    "yawn": {
+      "frames": [
+        7,
+        73,
+        74
+      ],
+      "fps": 4
+    },
+    "walk": {
+      "frames": [
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        98,
+        99
+      ],
+      "fps": 12
+    },
+    "turn": {
+      "frames": [
+        14,
+        78
+      ],
+      "fps": 4
+    },
+    "alert": {
+      "frames": [
+        15,
+        75
+      ],
+      "fps": 3
+    },
+    "run": {
+      "frames": [
+        16,
+        17,
+        18,
+        19,
+        20,
+        21
+      ],
+      "fps": 14
+    },
+    "jump": {
+      "frames": [
+        22,
+        23,
+        97,
+        96
+      ],
+      "fps": 10
+    },
+    "fall": {
+      "frames": [
+        24,
+        25,
+        93,
+        92
+      ],
+      "fps": 8
+    },
+    "fallTumble": {
+      "frames": [
+        108,
+        109,
+        110,
+        111
+      ],
+      "fps": 12
+    },
+    "fallCurl": {
+      "frames": [
+        112,
+        113,
+        91
+      ],
+      "fps": 6
+    },
+    "fallFlail": {
+      "frames": [
+        114,
+        115,
+        116,
+        84
+      ],
+      "fps": 10
+    },
+    "land": {
+      "frames": [
+        26,
+        83
+      ],
+      "fps": 6
+    },
+    "drag": {
+      "frames": [
+        27,
+        28,
+        85
+      ],
+      "fps": 6
+    },
+    "climb": {
+      "frames": [
+        29,
+        30,
+        31,
+        86
+      ],
+      "fps": 8
+    },
+    "groom": {
+      "frames": [
+        32,
+        33,
+        34,
+        82
+      ],
+      "fps": 4
+    },
+    "sleep": {
+      "frames": [
+        69,
+        70,
+        71
+      ],
+      "fps": 1
+    },
+    "stretch": {
+      "frames": [
+        35,
+        79,
+        80,
+        81
+      ],
+      "fps": 4
+    },
+    "happy": {
+      "frames": [
+        36,
+        77
+      ],
+      "fps": 3
+    },
+    "annoyed": {
+      "frames": [
+        37,
+        76
+      ],
+      "fps": 3
+    },
+    "pounce": {
+      "frames": [
+        38,
+        39,
+        90
+      ],
+      "fps": 10
+    },
+    "clingTop": {
+      "frames": [
+        51,
+        52,
+        88
+      ],
+      "fps": 4
+    },
+    "wallLean": {
+      "frames": [
+        53,
+        54,
+        50
+      ],
+      "fps": 3
+    },
+    "jumpUp": {
+      "frames": [
+        55,
+        95
+      ],
+      "fps": 8
+    },
+    "jumpDown": {
+      "frames": [
+        56,
+        94
+      ],
+      "fps": 8
+    },
+    "lookDown": {
+      "frames": [
+        57,
+        58,
+        59
+      ],
+      "fps": 3
+    },
+    "hangDrop": {
+      "frames": [
+        60,
+        61,
+        89
+      ],
+      "fps": 3
+    },
+    "climbWindow": {
+      "frames": [
+        62,
+        63,
+        64,
+        87
+      ],
+      "fps": 6
+    },
+    "rub": {
+      "frames": [
+        100,
+        49
+      ],
+      "fps": 2
+    },
+    "pawKeyboard": {
+      "frames": [
+        101,
+        48
+      ],
+      "fps": 1
+    },
+    "bellyUp": {
+      "frames": [
+        102,
+        47
+      ],
+      "fps": 1
+    },
+    "slowBlink": {
+      "frames": [
+        103,
+        46
+      ],
+      "fps": 2
+    },
+    "knead": {
+      "frames": [
+        104,
+        45,
+        44
+      ],
+      "fps": 3
+    },
+    "attentionPaw": {
+      "frames": [
+        105,
+        43
+      ],
+      "fps": 2
+    },
+    "faceHide": {
+      "frames": [
+        106,
+        42
+      ],
+      "fps": 1
+    },
+    "tailChase": {
+      "frames": [
+        107,
+        41,
+        40
+      ],
+      "fps": 4
+    }
+  },
+  "frameNames": [
+    "idle-0",
+    "idle-1",
+    "idle-2",
+    "blink-0",
+    "sit-0",
+    "sit-1",
+    "look-0",
+    "yawn-0",
+    "walk-0",
+    "walk-1",
+    "walk-2",
+    "walk-3",
+    "walk-4",
+    "walk-5",
+    "turn-0",
+    "alert-0",
+    "run-0",
+    "run-1",
+    "run-2",
+    "run-3",
+    "run-4",
+    "run-5",
+    "jump-0",
+    "jump-1",
+    "fall-0",
+    "fall-1",
+    "land-0",
+    "drag-0",
+    "drag-1",
+    "climb-0",
+    "climb-1",
+    "climb-2",
+    "groom-0",
+    "groom-1",
+    "groom-2",
+    "stretch-0",
+    "happy-0",
+    "annoyed-0",
+    "pounce-0",
+    "pounce-1",
+    "tailChase-2",
+    "tailChase-1",
+    "faceHide-1",
+    "attentionPaw-1",
+    "knead-2",
+    "knead-1",
+    "slowBlink-1",
+    "bellyUp-1",
+    "pawKeyboard-1",
+    "rub-1",
+    "wallLean-2",
+    "clingTop-0",
+    "clingTop-1",
+    "wallLean-0",
+    "wallLean-1",
+    "jumpUp-0",
+    "jumpDown-0",
+    "lookDown-0",
+    "lookDown-1",
+    "lookDown-2",
+    "hangDrop-0",
+    "hangDrop-1",
+    "climbWindow-0",
+    "climbWindow-1",
+    "climbWindow-2",
+    "idle-3",
+    "blink-1",
+    "blink-2",
+    "sit-2",
+    "sleep-0",
+    "sleep-1",
+    "sleep-2",
+    "look-1",
+    "yawn-1",
+    "yawn-2",
+    "alert-1",
+    "annoyed-1",
+    "happy-1",
+    "turn-1",
+    "stretch-1",
+    "stretch-2",
+    "stretch-3",
+    "groom-3",
+    "land-1",
+    "fallFlail-3",
+    "drag-2",
+    "climb-3",
+    "climbWindow-3",
+    "clingTop-2",
+    "hangDrop-2",
+    "pounce-2",
+    "fallCurl-2",
+    "fall-3",
+    "fall-2",
+    "jumpDown-1",
+    "jumpUp-1",
+    "jump-3",
+    "jump-2",
+    "walk-6",
+    "walk-7",
+    "rub-0",
+    "pawKeyboard-0",
+    "bellyUp-0",
+    "slowBlink-0",
+    "knead-0",
+    "attentionPaw-0",
+    "faceHide-0",
+    "tailChase-0",
+    "fallTumble-0",
+    "fallTumble-1",
+    "fallTumble-2",
+    "fallTumble-3",
+    "fallCurl-0",
+    "fallCurl-1",
+    "fallFlail-0",
+    "fallFlail-1",
+    "fallFlail-2"
+  ],
+  "missing": []
+}

@@ -1,0 +1,45 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://ai-dev-team.local/gates.schema.json",
+  "title": "AI Dev Team Quality Gates",
+  "type": "object",
+  "required": ["version", "gates"],
+  "additionalProperties": false,
+  "properties": {
+    "version": { "type": "integer", "minimum": 1 },
+    "project": { "type": "string" },
+    "source": {
+      "type": "string",
+      "enum": ["core", "project", "discovered"]
+    },
+    "discoveredFrom": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "gates": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "required", "when"],
+        "additionalProperties": false,
+        "properties": {
+          "id": { "type": "string", "minLength": 1 },
+          "command": { "type": ["string", "null"] },
+          "required": { "type": "boolean" },
+          "when": {
+            "type": "string",
+            "enum": ["always", "frontend", "backend", "docs", "security", "manual", "never"]
+          },
+          "timeout": { "type": "integer", "minimum": 1000 },
+          "cwd": { "type": "string" },
+          "package": { "type": "string" },
+          "kind": {
+            "type": "string",
+            "enum": ["command", "protocol", "agent"]
+          },
+          "note": { "type": "string" }
+        }
+      }
+    }
+  }
+}

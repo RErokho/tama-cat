@@ -1,0 +1,15 @@
+{
+  "name": "ai-dev-team-fixture-next-mono",
+  "private": true,
+  "version": "0.0.0",
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "typecheck": "node -e \"console.log('root typecheck ok'); process.exit(0)\"",
+    "lint": "node -e \"console.log('root lint ok'); process.exit(0)\"",
+    "test": "node -e \"console.log('root test ok'); process.exit(0)\"",
+    "build": "node -e \"console.log('root build ok'); process.exit(0)\""
+  }
+}

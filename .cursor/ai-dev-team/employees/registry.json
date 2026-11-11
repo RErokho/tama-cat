@@ -1,0 +1,258 @@
+{
+  "version": 3,
+  "note": "tier core|optional from core-roster.json; cards in .cursor/agents",
+  "core": [
+    "repository-analyst",
+    "technology-analyst",
+    "product-analyst",
+    "software-architect",
+    "frontend-developer",
+    "backend-developer",
+    "debugging-specialist",
+    "qa-engineer",
+    "code-reviewer",
+    "security-analyst",
+    "commit-gate",
+    "technical-writer"
+  ],
+  "employees": [
+    {
+      "id": "team-lead",
+      "cursorAgent": null,
+      "writesCode": false,
+      "tier": "core",
+      "note": "main chat"
+    },
+    {
+      "id": "accessibility-specialist",
+      "cursorAgent": "accessibility-specialist",
+      "writesCode": false,
+      "tier": "optional",
+      "signal": "a11y of changed controls"
+    },
+    {
+      "id": "backend-architect",
+      "cursorAgent": "backend-architect",
+      "writesCode": false,
+      "tier": "optional",
+      "signal": "server service boundary (prefer software-architect first)"
+    },
+    {
+      "id": "backend-developer",
+      "cursorAgent": "backend-developer",
+      "writesCode": true,
+      "tier": "core",
+      "signal": null
+    },
+    {
+      "id": "business-analyst",
+      "cursorAgent": "business-analyst",
+      "writesCode": false,
+      "tier": "optional",
+      "signal": "as-is process from docs/code"
+    },
+    {
+      "id": "code-reviewer",
+      "cursorAgent": "code-reviewer",
+      "writesCode": false,
+      "tier": "core",
+      "signal": null
+    },
+    {
+      "id": "commit-gate",
+      "cursorAgent": "commit-gate",
+      "writesCode": false,
+      "tier": "core",
+      "signal": null
+    },
+    {
+      "id": "database-architect",
+      "cursorAgent": "database-architect",
+      "writesCode": false,
+      "tier": "optional",
+      "signal": "schema / migration design"
+    },
+    {
+      "id": "debugging-specialist",
+      "cursorAgent": "debugging-specialist",
+      "writesCode": true,
+      "tier": "core",
+      "signal": null
+    },
+    {
+      "id": "design-system-engineer",
+      "cursorAgent": "design-system-engineer",
+      "writesCode": false,
+      "tier": "optional",
+      "signal": "token/component system change"
+    },
+    {
+      "id": "desktop-developer",
+      "cursorAgent": "desktop-developer",
+      "writesCode": true,
+      "tier": "optional",
+      "signal": "desktop app exists in repo"
+    },
+    {
+      "id": "devops-engineer",
+      "cursorAgent": "devops-engineer",
+      "writesCode": false,
+      "tier": "optional",
+      "signal": "CI/build/env only"
+    },
+    {
+      "id": "documentation-analyst",
+      "cursorAgent": "documentation-analyst",
+      "writesCode": false,
+      "tier": "optional",
+      "signal": "recorded decisions before dispute"
+    },
+    {
+      "id": "frontend-architect",
+      "cursorAgent": "frontend-architect",
+      "writesCode": false,
+      "tier": "optional",
+      "signal": "UI shell / routing / client state boundary"
+    },
+    {
+      "id": "frontend-developer",
+      "cursorAgent": "frontend-developer",
+      "writesCode": true,
+      "tier": "core",
+      "signal": null
+    },
+    {
+      "id": "fullstack-developer",
+      "cursorAgent": "fullstack-developer",
+      "writesCode": true,
+      "tier": "optional",
+      "signal": "both client+server paths already named in one contract"
+    },
+    {
+      "id": "integration-architect",
+      "cursorAgent": "integration-architect",
+      "writesCode": false,
+      "tier": "optional",
+      "signal": "external system boundary"
+    },
+    {
+      "id": "mobile-developer",
+      "cursorAgent": "mobile-developer",
+      "writesCode": true,
+      "tier": "optional",
+      "signal": "mobile app exists in repo"
+    },
+    {
+      "id": "performance-tester",
+      "cursorAgent": "performance-tester",
+      "writesCode": false,
+      "tier": "optional",
+      "signal": "named hot path / expensive list"
+    },
+    {
+      "id": "product-analyst",
+      "cursorAgent": "product-analyst",
+      "writesCode": false,
+      "tier": "core",
+      "signal": null
+    },
+    {
+      "id": "product-designer",
+      "cursorAgent": "product-designer",
+      "writesCode": false,
+      "tier": "optional",
+      "signal": "interaction not fixed yet"
+    },
+    {
+      "id": "product-manager",
+      "cursorAgent": "product-manager",
+      "writesCode": false,
+      "tier": "optional",
+      "signal": "several independent outcomes need order"
+    },
+    {
+      "id": "qa-engineer",
+      "cursorAgent": "qa-engineer",
+      "writesCode": false,
+      "tier": "core",
+      "signal": null
+    },
+    {
+      "id": "refactoring-specialist",
+      "cursorAgent": "refactoring-specialist",
+      "writesCode": true,
+      "tier": "optional",
+      "signal": "structure-only, behavior unchanged"
+    },
+    {
+      "id": "repository-analyst",
+      "cursorAgent": "repository-analyst",
+      "writesCode": false,
+      "tier": "core",
+      "signal": null
+    },
+    {
+      "id": "requirements-analyst",
+      "cursorAgent": "requirements-analyst",
+      "writesCode": false,
+      "tier": "optional",
+      "signal": "unclear feature → testable requirements"
+    },
+    {
+      "id": "security-analyst",
+      "cursorAgent": "security-analyst",
+      "writesCode": false,
+      "tier": "core",
+      "signal": null
+    },
+    {
+      "id": "security-architect",
+      "cursorAgent": "security-architect",
+      "writesCode": false,
+      "tier": "optional",
+      "signal": "auth model design before code"
+    },
+    {
+      "id": "software-architect",
+      "cursorAgent": "software-architect",
+      "writesCode": false,
+      "tier": "core",
+      "signal": null
+    },
+    {
+      "id": "technical-writer",
+      "cursorAgent": "technical-writer",
+      "writesCode": true,
+      "tier": "core",
+      "signal": null
+    },
+    {
+      "id": "technology-analyst",
+      "cursorAgent": "technology-analyst",
+      "writesCode": false,
+      "tier": "core",
+      "signal": null
+    },
+    {
+      "id": "ui-designer",
+      "cursorAgent": "ui-designer",
+      "writesCode": false,
+      "tier": "optional",
+      "signal": "placement change in existing UI"
+    },
+    {
+      "id": "ux-designer",
+      "cursorAgent": "ux-designer",
+      "writesCode": false,
+      "tier": "optional",
+      "signal": "screen step sequence change"
+    },
+    {
+      "id": "ux-researcher",
+      "cursorAgent": "ux-researcher",
+      "writesCode": false,
+      "tier": "optional",
+      "signal": "scenario gap unclear"
+    }
+  ]
+}

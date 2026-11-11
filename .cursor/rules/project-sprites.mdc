@@ -1,0 +1,23 @@
+---
+description: Спрайты Desktop Cat — sheet, вырезка, генерация кадров.
+alwaysApply: false
+---
+
+# Спрайты
+
+- Канон: `assets/sprites/cat/sheet.png` + `sheet.json` (имена кадров и `animations`).
+- Чистые ячейки: `assets/sprites/cat/clean/<stem>.png`, размер кадра 200×128.
+- Масштаб: **fill% ячейки** — главный гейт (`normalize_to_fill.py` / `--use-profile`). `primary≈108` — advisory warn (fill-led).
+- Size gate: fill% band BAD; внутри анимации `mass_h` vs median Δ≥7 = BAD (Δ≥5 warn).
+- Цвет: средний RGB ≈ idle/canon; BAD dRGB≥10 / warn≥6; аним. BAD≥7 / warn≥3.5. **Цвет чинить только пересозданием кадра** (GenerateImage → process `--use-profile` → `normalize_to_fill` → check). Не `nudge_sprite_colors` / не RGB-shift.
+- Fill% = opaque/(cell_w×cell_h) — **один % для любого WxH** (напр. 16% от 200×128 = 16% от 120×200). База = idle (~16%); поза: compact×1.0 / tall×1.1 / thin×0.55 / sparse×0.72 / long×0.75; допуск ±3.5 pp. Zoom: fill 80% + mass_h 20%.
+- Gate: `scripts/check_sprites.bat` / `python scripts/check_sprites.py`; `--new` / `check_sprites_new.bat`; `--stems …`. Цвет: `audit_sprite_colors.py`. Новые кадры: process `--use-profile` → `normalize_to_fill` → check.
+- Fill card: `assets/sprites/cat/scale_profile.json`. Pose: thin/sparse/tall/compact/long. Не зумить только по bbox.
+- Walk: 6 кадров в анимации (`walk-0,1,3,4,6,7` @12fps); `walk-2`/`walk-5` — мёртвые дубли (IoU>~0.97), не в цикле.
+- Gate near-dup: соседние кадры анимации с IoU≥0.96 → BAD (`check_sprites`), idle/blink/sit в allowlist.
+- Исходники/референс: `прототип.png`, `assets/reference/`, HQ в Cursor assets; не Pollinations.
+- Полный реген: план `assets/sprites/cat/prompts/anim_regen_plan.json` (117 уникальных стемов, **без шаринга между анимациями**). Порядок: одна анимация за раз → GenerateImage → `process_sprite_frame.py --use-profile` → `qa_anim_frames.py <anim>` (halo/consec/color) → при FAIL переген → assemble. Sleep/blink — свои кадры, не sit/idle.
+- Новые кадры: Cursor GenerateImage (зелёный `#00FF00`, без реквизита/текста/рук/белой обводки) → process → QA → assemble → `dist/assets/sprites/cat/`.
+- Профиль вправо в ассете; разворот в коде (`facing`).
+- Позы у потолка (`clingTop`, `hangDrop`): контент top-align, без воздушного зазора над лапами.
+- В кадре только кот: без мониторов, подоконников, стоек, подписей.

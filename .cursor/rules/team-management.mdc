@@ -1,0 +1,16 @@
+---
+description: How AI Dev Team tracks tasks, hands off work, and stops retries.
+alwaysApply: false
+---
+
+# Tasks
+
+Record a non-point task in `.cursor/ai-dev-team/tasks/<id>.json` before delegation and validate with the script from skill `tasks`. From `planned` onward include `contract` (skill `task-contract`).
+
+Writing assignees need non-empty `allowed_files` (or packets). Set `forbidden_files` for hotspots peers must not touch. Two writers in one wave must not share an allowed path — split packets (`execution/dispatch.js`). Optional `execution.mode=worktree` for physical isolation; default is shared. Contract-first: architect interface packet before implement packets when boundaries change.
+
+Statuses follow `tasks/lifecycle.js` (includes `failed` and `verified`). `completed` only from `verified`. `verified` needs a passed verification report (or explicit skip). Do not skip a required gate for that task.
+
+Do not silently append a new mid-flight requirement to the same task. Hold the boundary or stop and name what was added.
+
+One retry per note / same symptom. Do not repeat the same call without a new reason, new data, or a new strategy. After two failed fix attempts on the same symptom, escalate to the user. Do not go above high. If high is not enough, split the work or ask the user.

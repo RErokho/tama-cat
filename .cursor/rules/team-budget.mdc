@@ -1,0 +1,12 @@
+---
+description: Smallest team, lowest level, no invented token counts.
+alwaysApply: false
+---
+
+# Budget
+
+Smallest roster (see `roster.md` minimum table). Lowest sufficient level. Ban Fast/Extra High.
+
+Shrink output: brief `report_format`, `max_reply: short`. Reject essay returns once.
+
+Do not invent token counts. Skill: `context-optimization`.

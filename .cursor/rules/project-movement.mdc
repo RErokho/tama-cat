@@ -1,0 +1,16 @@
+---
+description: Физика и окна Desktop Cat — clamp, cling, hop, WinAPI surfaces.
+alwaysApply: false
+---
+
+# Движение и мир
+
+- Движок: `crates/cat-core` (`movement.rs`, `physics.rs`).
+- Поверхности: `WorldSystem` → floor/taskbar/windowTop/windowSide; окна через `cat-platform` (EnumWindows, z-order).
+- Clamp по **текущему** монитору, не по union AABB.
+- Особые позы: `clingTop`, `wallLean`, `jumpUp`/`jumpDown`, `lookDown`→`hangDrop`→fall, `climbWindow`.
+- На `windowTop` можно peek-drop не только с края; hop между видимыми верхами окон.
+- Высота прыжка: `MAX_JUMP_UP_PX` / `MAX_JUMP_DOWN_PX` / `MAX_CLIMB_UP_PX` в `crates/cat-core/src/config.rs`.
+- `wallLean`: right-packed спрайт + `snap_wall_lean_x` впритык к краю экрана.
+- Поведение не планирует walk/idle, пока `specialPose` или полёт.
+- Не стоять на полностью перекрытом titleband (сегменты после вычитания окклюдеров).

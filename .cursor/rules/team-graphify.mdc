@@ -1,0 +1,20 @@
+---
+description: Graphify is local only. Cloud and semantic doc mode need an explicit ask.
+alwaysApply: false
+---
+
+# Local Graphify
+
+Graphify is local code analysis (`graphify` / package `graphifyy`). Cloud URL, MCP, and sending sources out are forbidden.
+
+Default: `graphify extract . --code-only` from the project root you are analyzing. Do not set `--out`, model flags, `--mode deep`, or API keys.
+
+If `graphify` is missing, do not build the graph and do not install it via script. Read files and say there is no graph. Do not run `graphify install --project` in core: it can overwrite team skills.
+
+If `graph.json` exists, for an unfamiliar area run `graphify query` / `path` / `explain` / `affected` first, then read specific lines. Skip for one known file.
+
+Put the real `graph.json` path in code-search subagent prompts; forbid reading the whole file. INFERRED edges are not source facts.
+
+After editing code in that area, run `graphify update .` without a model. Do not require `GRAPH_REPORT` or wiki (community naming may call a model).
+
+Graph lives at `graphify-out/graph.json` in that project root. Not under `.cursor/`. Do not add the catalog to Git.

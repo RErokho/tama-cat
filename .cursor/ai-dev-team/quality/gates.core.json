@@ -1,0 +1,79 @@
+{
+  "version": 1,
+  "project": "ai-dev-team-core",
+  "source": "core",
+  "gates": [
+    {
+      "id": "point-edit",
+      "command": null,
+      "required": true,
+      "when": "manual",
+      "kind": "protocol",
+      "note": "Team Lead read-back for a single known file"
+    },
+    {
+      "id": "behavior",
+      "command": null,
+      "required": true,
+      "when": "always",
+      "kind": "agent",
+      "note": "requirement-match + qa-engineer"
+    },
+    {
+      "id": "multi-file",
+      "command": null,
+      "required": true,
+      "when": "always",
+      "kind": "agent",
+      "note": "qa-engineer + code-reviewer"
+    },
+    {
+      "id": "security",
+      "command": null,
+      "required": true,
+      "when": "security",
+      "kind": "agent",
+      "note": "security-analyst and/or security-review"
+    },
+    {
+      "id": "ui",
+      "command": null,
+      "required": true,
+      "when": "frontend",
+      "kind": "protocol",
+      "note": "browser-check against user scenario"
+    },
+    {
+      "id": "contract",
+      "command": null,
+      "required": true,
+      "when": "always",
+      "kind": "protocol",
+      "note": "task.contract present for active tasks"
+    },
+    {
+      "id": "packets",
+      "command": null,
+      "required": true,
+      "when": "always",
+      "kind": "protocol",
+      "note": "no allowed_files overlap"
+    },
+    {
+      "id": "fix-loop",
+      "command": null,
+      "required": true,
+      "when": "always",
+      "kind": "protocol",
+      "note": "max two attempts per same symptom"
+    },
+    {
+      "id": "verification-report",
+      "command": null,
+      "required": true,
+      "when": "always",
+      "kind": "protocol",
+      "note": "machine evidence required before commit clearance"
+    }
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "version": 1,
+  "note": "Default call set. Optional agents stay on disk; invite only when a signal matches.",
+  "core": [
+    "repository-analyst",
+    "technology-analyst",
+    "product-analyst",
+    "software-architect",
+    "frontend-developer",
+    "backend-developer",
+    "debugging-specialist",
+    "qa-engineer",
+    "code-reviewer",
+    "security-analyst",
+    "commit-gate",
+    "technical-writer"
+  ],
+  "signals": {
+    "frontend-architect": "UI shell / routing / client state boundary",
+    "backend-architect": "server service boundary (prefer software-architect first)",
+    "database-architect": "schema / migration design",
+    "integration-architect": "external system boundary",
+    "security-architect": "auth model design before code",
+    "fullstack-developer": "both client+server paths already named in one contract",
+    "mobile-developer": "mobile app exists in repo",
+    "desktop-developer": "desktop app exists in repo",
+    "refactoring-specialist": "structure-only, behavior unchanged",
+    "devops-engineer": "CI/build/env only",
+    "performance-tester": "named hot path / expensive list",
+    "accessibility-specialist": "a11y of changed controls",
+    "design-system-engineer": "token/component system change",
+    "ui-designer": "placement change in existing UI",
+    "ux-designer": "screen step sequence change",
+    "ux-researcher": "scenario gap unclear",
+    "product-designer": "interaction not fixed yet",
+    "product-manager": "several independent outcomes need order",
+    "business-analyst": "as-is process from docs/code",
+    "requirements-analyst": "unclear feature → testable requirements",
+    "documentation-analyst": "recorded decisions before dispute"
+  }
+}

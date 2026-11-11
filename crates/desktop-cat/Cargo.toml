@@ -1,0 +1,15 @@
+[package]
+name = "desktop-cat"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+description = "Desktop Cat Windows app (Rust)"
+
+[[bin]]
+name = "desktop-cat"
+path = "src/main.rs"
+
+[dependencies]
+cat-core = { workspace = true }
+cat-render = { workspace = true }
+cat-platform = { workspace = true }

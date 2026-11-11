@@ -1,0 +1,63 @@
+{
+  "id": "TASK-4",
+  "status": "planned",
+  "priority": "high",
+  "title": "Full sprite anim regen from scratch (no frame reuse)",
+  "request": "Recreate all animations and frames from scratch; no cross-anim frame reuse; per-anim generate→verify→regen loop.",
+  "interpretation": "Follow anim_regen_plan.json order; dedicated stems per anim; QA via qa_anim_frames.py; idle is canon.",
+  "acceptance": [
+    "Every animation in plan uses only its own stems",
+    "No stem appears in two different animations",
+    "Each accepted anim passes qa_anim_frames.py",
+    "sheet reassembled; cargo build -p desktop-cat ok"
+  ],
+  "assignees": ["desktop-developer", "qa-engineer"],
+  "history": [
+    {
+      "at": "2026-11-11T14:55:00Z",
+      "event": "created",
+      "note": "User requested full from-scratch regen, sequential per anim"
+    }
+  ],
+  "budget": {
+    "effortCap": "high",
+    "maxAttempts": 2
+  },
+  "execution": {
+    "mode": "shared",
+    "isolation": "disabled"
+  },
+  "contract": {
+    "goal": "Replace all sprite animations with dedicated from-scratch frames, verified one anim at a time.",
+    "context": "38 anims in plan. Current reuse: idle↔blink, sit↔sleep, stretch ping-pong.",
+    "inputs": [
+      "assets/sprites/cat/prompts/anim_regen_plan.json",
+      "scripts/qa_anim_frames.py",
+      "assets/reference/cat-prototype.png"
+    ],
+    "constraints": [
+      "No cross-anim stem reuse",
+      "Color fix = regenerate only",
+      "No props / no white halo",
+      "GenerateImage only while task status is planned (not in_progress)"
+    ],
+    "allowed_files": [
+      "assets/sprites/cat/**",
+      "scripts/**",
+      "docs/BEHAVIOR.md",
+      ".cursor/rules/project-sprites.mdc",
+      ".cursor/ai-dev-team/tasks/TASK-4.json"
+    ],
+    "forbidden_files": [".cursor/plans/**"],
+    "acceptance": [
+      "Plan stems unique across anims",
+      "qa_anim_frames passes per accepted anim",
+      "sheet.json animations point to dedicated stems"
+    ],
+    "report_format": "writer-brief",
+    "risks": ["GenerateImage color/pose drift", "long sequential regen"],
+    "unfinished": ["all anims pending; starting idle"],
+    "evidence": [],
+    "max_reply": "short"
+  }
+}

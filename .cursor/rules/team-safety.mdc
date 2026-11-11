@@ -1,0 +1,10 @@
+---
+description: Dangerous actions need explicit user permission.
+alwaysApply: true
+---
+
+# Safety
+
+Need explicit yes in **this** user message for: push/force-push/hard-reset/history wipe; deploy/publish; other repo; new external service/non-kit MCP/cloud Graphify; sending source out; mass-delete or overwrite of user-changed Cursor files.
+
+Commit/push → `commit-gate` first (unless «без проверок» / skip checks / as is). Need `verification-report.json` passed (or skipped + skip_reason). Doer claims ≠ evidence. Secrets never in Git/chat/reports. Same gate symptom: max **2** fixes, then escalate. Packet rollback only if user asks (`packet-rollback`); never `git reset --hard`. Do not bypass hooks.

@@ -1,0 +1,137 @@
+{
+  "id": "TASK-2",
+  "status": "cancelled",
+  "priority": "high",
+  "title": "Companion reactions: Perception → scenes (all waves)",
+  "request": "Implement companion reaction pipeline and ~60 scenes across waves 0–5 with sprites reuse first.",
+  "interpretation": "One Perception→Context→Scene engine; canon 50 user scenes + Lead extras; Rust/Win32 only; reuse sheet clips; new art only when reuse insufficient. Replaces cancelled TASK-1 (paused for sprite color regen).",
+  "acceptance": [
+    "Single Perception→Context→Scene pipeline",
+    "Scene catalog covers ~60 SceneIds with trigger/clip/duration/priority/cooldown",
+    "Wave1 companion feel for typing/cursor/idle/lock",
+    "cargo build -p desktop-cat succeeds",
+    "No tamagotchi systems"
+  ],
+  "assignees": [
+    "desktop-developer",
+    "qa-engineer"
+  ],
+  "history": [
+    {
+      "at": "2026-11-11T14:30:00Z",
+      "event": "created",
+      "note": "Recreated from TASK-1 after temp cancel for GenerateImage sprite color regen"
+    },
+    {
+      "at": "2026-11-11T11:35:00Z",
+      "from": "cancelled",
+      "to": "cancelled",
+      "by": "team-lead",
+      "note": "Temp cancel so GenerateImage can write outside workspace for sprite regen; recreate after"
+    }
+  ],
+  "budget": {
+    "effortCap": "high",
+    "maxAttempts": 2
+  },
+  "execution": {
+    "mode": "shared",
+    "isolation": "disabled"
+  },
+  "contract": {
+    "goal": "Ship companion reaction engine and all planned scenes wired to Win32 sensors and AnimClips.",
+    "context": "Desktop Cat Rust workspace. BehaviorEngine is autonomous only. sheet.json has unused look/yawn/turn/alert/happy/annoyed/pounce. Plan waves 0–5.",
+    "inputs": [
+      "docs/BEHAVIOR.md",
+      "plan companion_reactions_plan"
+    ],
+    "constraints": [
+      "No Electron",
+      "No WinAPI types in cat-core",
+      "Secrets/clipboard text never logged",
+      "Do not edit the plan file",
+      "Reuse existing sprites when possible"
+    ],
+    "allowed_files": [
+      "crates/cat-core/src/**",
+      "crates/cat-platform/src/**",
+      "crates/cat-render/src/**",
+      "crates/desktop-cat/src/**",
+      "Cargo.toml",
+      "docs/BEHAVIOR.md",
+      "assets/sprites/cat/**",
+      "scripts/**",
+      ".cursor/ai-dev-team/tasks/TASK-2.json",
+      ".cursor/ai-dev-team/verification-report.json"
+    ],
+    "forbidden_files": [
+      ".cursor/plans/**"
+    ],
+    "acceptance": [
+      "Perception snapshot sampled on Tick",
+      "All SceneIds selectable via director with cooldowns",
+      "Unused sheet clips wired in AnimClip",
+      "cargo build -p desktop-cat ok"
+    ],
+    "report_format": "writer-brief",
+    "risks": [
+      "Scroll/UIA/volume heuristics may be coarse",
+      "New unique pose sprites deferred to reuse mapping"
+    ],
+    "unfinished": [],
+    "evidence": [],
+    "max_reply": "short"
+  },
+  "packets": [
+    {
+      "id": "PKT-1",
+      "kind": "contract",
+      "title": "Activity + Scene contracts",
+      "assignee": "desktop-developer",
+      "depends_on": [],
+      "allowed_files": [
+        "crates/cat-core/src/types.rs",
+        "crates/cat-core/src/activity.rs",
+        "crates/cat-core/src/scenes.rs",
+        "crates/cat-core/src/context.rs",
+        "crates/cat-core/src/lib.rs"
+      ],
+      "forbidden_files": [
+        ".cursor/plans/**"
+      ],
+      "acceptance": [
+        "UserActivitySnapshot and Scene catalog compile"
+      ],
+      "verify": [
+        "cargo check -p cat-core"
+      ]
+    },
+    {
+      "id": "PKT-2",
+      "kind": "implement",
+      "title": "Behavior + pet + perception + app bridge",
+      "assignee": "desktop-developer",
+      "depends_on": [
+        "PKT-1"
+      ],
+      "allowed_files": [
+        "crates/cat-core/src/behavior.rs",
+        "crates/cat-core/src/pet.rs",
+        "crates/cat-platform/src/perception.rs",
+        "crates/cat-platform/src/lib.rs",
+        "crates/desktop-cat/src/main.rs",
+        "Cargo.toml",
+        "docs/BEHAVIOR.md"
+      ],
+      "forbidden_files": [
+        ".cursor/plans/**"
+      ],
+      "acceptance": [
+        "Tick feeds snapshot; scenes fire"
+      ],
+      "verify": [
+        "cargo build -p desktop-cat"
+      ]
+    }
+  ]
+}

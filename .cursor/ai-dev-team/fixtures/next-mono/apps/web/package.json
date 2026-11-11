@@ -1,0 +1,10 @@
+{
+  "name": "@fixture/web",
+  "private": true,
+  "version": "0.0.0",
+  "scripts": {
+    "typecheck": "node -e \"console.log('web typecheck ok'); process.exit(0)\"",
+    "lint": "node -e \"console.log('web lint ok'); process.exit(0)\"",
+    "build": "node -e \"console.log('web build ok'); process.exit(0)\""
+  }
+}

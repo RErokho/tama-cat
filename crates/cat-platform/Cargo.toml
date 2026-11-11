@@ -1,0 +1,11 @@
+[package]
+name = "cat-platform"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+description = "Windows layered window, displays, EnumWindows surfaces"
+
+[dependencies]
+cat-core = { workspace = true }
+thiserror = { workspace = true }
+windows = { workspace = true }

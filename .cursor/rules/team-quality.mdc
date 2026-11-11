@@ -1,0 +1,14 @@
+---
+description: Which check closes an AI Dev Team task.
+alwaysApply: false
+---
+
+# Quality
+
+Team Lead checks a point edit of a known file. Behavior and multi-file work close with `qa-engineer`, then `code-reviewer`. Do not send one-line edits to review.
+
+QA and reviewers do not edit sources. Notes go back to the implementer. After one failed retry, leave the task open and show the defect to the user.
+
+Do not write or run tests. Check by reading changed behavior; for UI, use the browser.
+
+Check UI in the browser against the user scenario. If the browser did not open, say so. A secret in code or a report blocks closing.
